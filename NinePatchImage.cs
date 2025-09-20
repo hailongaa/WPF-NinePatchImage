@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows;
 
-namespace WPFNinePatchUserControl
+namespace 你的工程名字
 {
     /// <summary>
     /// C#中用于实时展示 Android 9-patch 图片的wpf控件
