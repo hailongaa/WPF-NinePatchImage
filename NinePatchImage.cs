@@ -20,7 +20,8 @@ namespace 你的工程名字
     /// 
     /// 使用方法：
     /// 
-    /// ExportToPng(string path)  导出当前渲染好的png
+    /// NinePatch ninePatch = new NinePatch(image); // 从9-patch图片image创建NinePatch对象
+    /// Image newImage = ninePatch.ImageSizeOf(500, 500); // 获取拉伸到500x500大小的图片
     /// 
     /// </summary>
     internal class NinePatchImage : UserControl, IDisposable
@@ -333,6 +334,17 @@ namespace 你的工程名字
                 data.SaveTo(stream);
             }
         }
+        /// <summary>
+        /// 刷新
+        /// </summary>
+        public void Refresh()
+        {
+            this.UpdateLayout();
+            skCanvas.InvalidateVisual();
+        }
+        /// <summary>
+        /// 释放资源
+        /// </summary>
         public void Dispose()
         {
             foreach (var kv in cache)
